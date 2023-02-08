@@ -124,7 +124,7 @@ func addLicenses(resolver source.FileResolver, dbLocation source.Location, p *pk
 	}
 	licenses := findings.ToSlice()
 	sort.Strings(licenses)
-	p.Licenses = licenses
+	p.Licenses = internal.LogicalStrings{Simple: licenses}
 	p.Locations.Add(*location)
 }
 
